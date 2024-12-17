@@ -1,14 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>按鈕特效與活動背景</title>
+  <style>
+    /* 設定全頁面背景 */
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      font-family: Arial, sans-serif;
+    }
+
+    /* 動態漸變背景動畫 */
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* 按鈕樣式 */
+    .button {
+      padding: 15px 30px;
+      font-size: 18px;
+      color: white;
+      background: linear-gradient(90deg, #ff758c, #ff7eb3);
+      border: none;
+      border-radius: 50px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    /* 按鈕懸停特效 */
+    .button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+      background: linear-gradient(90deg, #ff7eb3, #ff758c);
+    }
+
+    /* 按鈕點擊時特效 */
+    .button:active {
+      transform: scale(0.95);
+    }
+
+  </style>
 </head>
 <body>
-    <h1>歡迎來到我的履歷網站</h1>
-    <p>這是我的第一個 GitHub Pages 網站！</p>
-    <script src="script.js"></script>
+  <!-- 按鈕 -->
+  <button class="button" onclick="buttonClicked()">點我試試</button>
+
+  <!-- JavaScript 動作 -->
+  <script>
+    function buttonClicked() {
+      alert("你點擊了按鈕！");
+    }
+  </script>
 </body>
 </html>
